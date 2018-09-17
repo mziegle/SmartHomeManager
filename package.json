@@ -1,0 +1,30 @@
+{
+  "name": "smart_home_manager",
+  "version": "1.0.0",
+  "description": "Webui for the smart home manager device",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Michael Ziegler",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "jasmine-core": "^3.2.1",
+    "karma": "^3.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-safari-launcher": "^1.0.0",
+    "popper.js": "^1.14.4"
+  },
+  "dependencies": {
+    "angular": "^1.7.4",
+    "angular-route": "^1.7.4",
+    "bootstrap": "^4.1.3",
+    "jquery": "^1.12.4"
+  }
+}

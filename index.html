@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="SmartHomeManager" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon-96x96.png">
+
+    <title>Smart Home Manager</title>
+
+    <!-- Angular JS -->
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/popper.min.js"></script>
+    
+
+    <script src="smartHomeManager.js"></script>
+
+    <script src="overview/overview.controller.js"></script>
+
+    <script src="overview/wlan/wlan.controller.js"></script>
+    <script src="overview/ethernet/ethernet.controller.js"></script>
+    <script src="overview/heater/heater.controller.js"></script>
+    <script src="overview/camera/camera.controller.js"></script>
+    <script src="sidebar/sidebar.controller.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+    <link href="overview.css" rel="stylesheet">
+</head>
+
+<body>
+    <div ng-view>
+
+    </div>
+</body>
+
+</html>

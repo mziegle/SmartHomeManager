@@ -1,16 +1,27 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+<nav class="col-md-2 d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="/#!/overview">
-                    <span data-feather="home"></span>
+                <a 
+                    href
+                    ng-click="sidebarController.loadOverviewView()"
+                    class="nav-link" 
+                    ng-class="{
+                        active: sidebarController.currentlyLoaded === '/overview'
+                    }">
+
                     Overview
-                    <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/#!/devices">
-                    <span data-feather="file"></span>
+                <a 
+                    href
+                    ng-click="sidebarController.loadDevicesView()"
+                    class="nav-link" 
+                    ng-class="{
+                        active: sidebarController.currentlyLoaded === '/devices'
+                    }">
+
                     Devices
                 </a>
             </li>

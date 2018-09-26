@@ -1,0 +1,8 @@
+  /*
+   * Input 
+   */
+
+.input-validation-error {
+    color: red;
+    font-size: 12px;
+}

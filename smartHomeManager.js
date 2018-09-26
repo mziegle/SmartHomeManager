@@ -4,9 +4,9 @@ var SmartHomeManger = angular.module('SmartHomeManager', ['ngRoute'])
 
         $routeProvider
             .when('/login', {
-                templateUrl: 'signin.html',
-                controller: 'loginController',
-                controllerAs: 'loginController'
+                templateUrl: 'sign_in/signin.html',
+                controller: 'signInController',
+                controllerAs: 'signInController'
             })
             .when('/overview', {
                 templateUrl: 'overview/overview.html',
@@ -19,16 +19,6 @@ var SmartHomeManger = angular.module('SmartHomeManager', ['ngRoute'])
                 controllerAs: 'devicesController'
             })
             .otherwise('/login');
-    }])
-
-    .controller('loginController', ['$location', function($location) {
-        
-        var loginController = this;
-
-        loginController.login = function() {
-            $location.path( "/overview" );
-        };
-
     }])
 
     .controller('devicesController', ['$route', function() {

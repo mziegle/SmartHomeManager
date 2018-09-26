@@ -4,14 +4,15 @@
 
         <img 
             class="mb-4" 
-            src="smart-home.svg" alt="" 
+            src="/sign_in/smart-home.svg" 
+            alt="" 
             width="72" 
             height="72">
 
         <h1 
             class="h3 mb-3 font-weight-normal">
 
-            Welcome to the Smart Home Manger Webui
+            Welcome to the <br> Smart Home Manger
         </h1>
 
         <label 
@@ -22,12 +23,11 @@
         </label>
 
         <input 
-            value="user@web.de" 
-            type="email" 
-            id="inputEmail" 
+            value="user" 
+            type="user"
             class="form-control" 
             placeholder="Username" 
-            required 
+            required
             autofocus>
             
         <label 
@@ -42,17 +42,22 @@
             type="password"
             id="inputPassword"
             class="form-control"
-            placeholder="Password" required>
+            placeholder="Password" 
+            required>
 
         <button
             class="btn btn-lg btn-primary btn-block" 
             type="submit"
-            ng-click="loginController.login()">
+            ng-click="signInController.signIn()">
             
             Login
         </button>
         
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        <p 
+            class="mt-5 mb-3 text-muted">
+            
+            &copy; 2017-2018
+        </p>
 
     </form>
 

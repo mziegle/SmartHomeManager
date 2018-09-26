@@ -1,5 +1,9 @@
 <div class="container">
-    <div class="card box-shadow">
+    <div 
+        class="card box-shadow smart-home-configuration"
+        ng-class="{
+            'active': wlanController.active}
+        ">
 
         <div class="card-header">
             <img class="card-img-top mx-auto d-block" style="width: 30%" src="overview/wlan/wifi.svg" alt="Card image cap">
@@ -8,7 +12,7 @@
         <div class="card-body">
             
             <p class="card-text">
-                Wireless Lan is active.
+                {{ wlanController.statusText }}
             </p>
 
             <div class="d-flex justify-content-between align-items-center">
@@ -20,26 +24,69 @@
 
                         Configure
                     </button>
-                    <button type="button" class="btn btn-md btn-outline-secondary">Off</button>
+                    <button 
+                        type="button" 
+                        class="btn btn-md btn-outline-secondary"
+                        ng-click="wlanController.activate()">
+                        
+                        {{ wlanController.onOffButtonText }}
+                    </button>
                 </div>
             </div>
 
-            <div class="pt-3" ng-if="wlanController.configurationDisplayed">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="mb-3">
-                        <label>SSID</label>
-                        <input type="text" class="form-control">
+            <div 
+                ng-form="wlanController.wlanForm" 
+                ng-if="wlanController.configurationDisplayed">
+
+                <div class="pt-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mb-3">
+                            <label>SSID</label>
+                            <input
+                                name="ssid"
+                                required
+                                ng-model="wlanController.ssid"
+                                ng-required="true"
+                                type="text"
+                                class="form-control">
+                             <label
+                                ng-if="wlanController.wlanForm.ssid.$invalid"
+                                class="input-validation-error">
+                                SSID is required.
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="mb-3">
-                        <label for="firstName">Password</label>
-                        <input type="text" class="form-control" id="firstName">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mb-3">
+                            <label>Password</label>
+                            <input
+                                name="password"
+                                ng-attr-type="password"
+                                required
+                                ng-model="wlanController.password"
+                                type="text" 
+                                class="form-control">
+
+                            <label
+                                ng-if="wlanController.wlanForm.password.$invalid"
+                                class="input-validation-error">
+                                Password is required.
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-md btn-outline-secondary">Save</button>
-                    <button type="button" class="btn btn-md btn-outline-secondary">Cancel</button>
+                    <div class="btn-group">
+                        <button 
+                            ng-disabled="wlanController.wlanForm.$invalid || wlanController.configApplyInProgress"
+                            ng-click="wlanController.save()"
+                            type="button"
+                            class="btn btn-md btn-outline-secondary">
+    
+                            Apply
+                        </button>
+                    </div>
+                    <img ng-if="wlanController.configApplyInProgress"
+                        class="mx-auto d-block"
+                        src="overview/wlan/loading.gif">
                 </div>
             </div>
 

@@ -3,13 +3,19 @@ SmartHomeManger
     .component('wlan', {
         templateUrl: 'overview/wlan/wlan.html',
         controllerAs: 'wlanController',
-        controller: function($scope, $element, $attrs) {
+        controller: function($timeout) {
 
             var wlanController = this;
             
-            wlanController.active = true;
-            wlanController.onOffButtonText = "Off";
+            wlanController.statusText = "WLAN must be configured";
+            wlanController.onOffButtonText = "On";
+
+            wlanController.active = false;
+            wlanController.configApplyInProgress = false;
             wlanController.configurationDisplayed = false;
+
+            wlanController.ssid = "";
+            wlanController.password = "";
 
             console.log("wlanController");
             wlanController.showConfiguration = function() {
@@ -24,6 +30,18 @@ SmartHomeManger
                 } else {
                     wlanController.onOffButtonText = "On"
                 }
+            };
+
+            wlanController.save = function() {
+                wlanController.configApplyInProgress = true;
+                $timeout(function() {
+                    wlanController.configApplyInProgress = false;
+                }, 1000);
+                // console.log("save clicked")
+            };
+
+            wlanController.cancel = function() {
+                console.log("cancel clicked")
             };
         }
     })

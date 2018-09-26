@@ -2,7 +2,8 @@
     <div 
         class="card mb-4 box-shadow smart-home-configuration" 
         ng-class="{
-            'active': ethernetController.active}">
+                'active': ethernetController.active}
+            ">
         
         <div class="card-header">
             <img class="card-img-top mx-auto d-block" style="width: 30%" src="overview/ethernet/ethernet.svg" alt="Card image cap">
@@ -19,7 +20,11 @@
                         Configure
                     </button>
 
-                    <button type="button" class="btn btn-md btn-outline-secondary" ng-click="ethernetController.activate()">
+                    <button 
+                        type="button" 
+                        class="btn btn-md btn-outline-secondary" 
+                        ng-click="ethernetController.activate()">
+                        
                         {{ ethernetController.onOffButtonText }}
                     </button>
                 </div>

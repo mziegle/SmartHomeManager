@@ -14,7 +14,7 @@ var SmartHomeManger = angular.module('SmartHomeManager', ['ngRoute'])
                 controllerAs: 'overviewController'
             })
             .when('/devices', {
-                templateUrl: 'devices.html',
+                templateUrl: 'devices/devices.html',
                 controller: 'devicesController',
                 controllerAs: 'devicesController'
             })

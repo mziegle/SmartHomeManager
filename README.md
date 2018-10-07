@@ -22,7 +22,7 @@ Das Beispielprojekt soll die Oberfläche eines Smart Home Managers darstellen. A
 
 ### Login
 
-Über die Login-Setite kann sich der Nutzer mit seinem Account einloggen.
+Über die Login-Seite kann sich der Nutzer mit seinem Account einloggen.
 
 ### Overview
 

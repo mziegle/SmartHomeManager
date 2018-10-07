@@ -39,9 +39,5 @@ SmartHomeManger
                 }, 1000);
                 // console.log("save clicked")
             };
-
-            wlanController.cancel = function() {
-                console.log("cancel clicked")
-            };
         }
     })

@@ -1,17 +1,23 @@
 <div class="container">
     <div 
         class="card box-shadow smart-home-configuration"
-        ng-class="{
-            'active': wlanController.active}
+        ng-class="
+            { 'active': wlanController.active }
         ">
 
         <div class="card-header">
-            <img class="card-img-top mx-auto d-block" style="width: 30%" src="overview/wlan/wifi.svg" alt="Card image cap">
+            <img 
+                class="card-img-top mx-auto d-block" 
+                style="width: 30%" 
+                src="overview/wlan/wifi.svg" 
+                alt="Card image cap">
+
         </div>
 
         <div class="card-body">
             
             <p class="card-text">
+
                 {{ wlanController.statusText }}
             </p>
 
@@ -86,7 +92,7 @@
                     </div>
                     <img ng-if="wlanController.configApplyInProgress"
                         class="mx-auto d-block"
-                        src="overview/wlan/loading.gif">
+                        src="overview/loading.gif">
                 </div>
             </div>
 

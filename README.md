@@ -26,7 +26,7 @@ Das Beispielprojekt soll die Oberfläche eines Smart Home Managers darstellen. A
 npm install -g http-server
 cd SmartHomeManager
 npm install
-http-server .
+http-server app/
 ```
 
 

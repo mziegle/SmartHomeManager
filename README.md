@@ -20,22 +20,13 @@ In einem Projekt der Firma MixedMode wurde diese Technologie erfolgreich zur Ent
 
 Das Beispielprojekt soll die Oberfläche eines Smart Home Managers darstellen. Am Smart Home Manager kann man verschiedene Geräte (Sensoren, Schalter, Steuereinheiten etc.) über unterschiedliche Verbindungen (USB, WLAN, Serielle Schnittstelle etc.) anschließen. Die Oberfläche soll einen Überlick über den Zustand der Smart Home Geräte geben und die Konfiguration der Interaktion zwischen den Geräten ermöglichen.
 
-### Login
+## Die Applikation starten
 
-Über die Login-Seite kann sich der Nutzer mit seinem Account einloggen.
-
-### Overview
-
-In der Übersicht kann der Nutzer den Status des Geräts betrachten.
-
-### Devices
-
-Hier sieht der Nutzer eine Übersicht der registrierten Smart Home Geräte.
-
-#### Device Konfiguration
-
-Der Nutzer kann hier das in der Device-Liste ausgewählte Gerät konfigurieren.
-
-## Entwicklung
+```
+npm install -g http-server
+cd SmartHomeManager
+npm install
+http-server .
+```
 
 

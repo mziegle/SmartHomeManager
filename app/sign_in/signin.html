@@ -2,60 +2,63 @@
 
     <form class="form-signin">
 
-        <img 
-            class="mb-4" 
-            src="/sign_in/smart-home.svg" 
-            alt="" 
-            width="72" 
+        <img
+            class="mb-4"
+            src="/sign_in/smart-home.svg"
+            alt=""
+            width="72"
             height="72">
 
-        <h1 
+        <h1
             class="h3 mb-3 font-weight-normal">
 
             Welcome to the <br> Smart Home Manger
         </h1>
 
-        <label 
-            for="inputEmail" 
+        <label
+            for="inputEmail"
             class="sr-only">
 
             Username
         </label>
 
-        <input 
-            value="user" 
+        <input
+            id="user"
+            value="user"
             type="user"
-            class="form-control" 
-            placeholder="Username" 
+            class="form-control"
+            placeholder="Username"
             required
             autofocus>
-            
-        <label 
-            for="inputPassword" 
+
+        <label
+            for="inputPassword"
             class="sr-only">
 
             Password
         </label>
 
-        <input 
+        <input
+            id="password"
             value="secret"
             type="password"
             id="inputPassword"
             class="form-control"
-            placeholder="Password" 
+            placeholder="Password"
             required>
 
         <button
-            class="btn btn-lg btn-primary btn-block" 
+            id="login"
+            class="btn btn-lg btn-primary btn-block"
             type="submit"
             ng-click="signInController.signIn()">
-            
+
             Login
         </button>
-        
-        <p 
+
+        <p
             class="mt-5 mb-3 text-muted">
-            
+
             &copy; 2017-2018
         </p>
 

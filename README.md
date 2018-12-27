@@ -20,7 +20,7 @@ In einem Projekt der Firma MixedMode wurde diese Technologie erfolgreich zur Ent
 
 Das Beispielprojekt soll die Oberfläche eines Smart Home Managers darstellen. Am Smart Home Manager kann man verschiedene Geräte (Sensoren, Schalter, Steuereinheiten etc.) über unterschiedliche Verbindungen (USB, WLAN, Serielle Schnittstelle etc.) anschließen. Die Oberfläche soll einen Überlick über den Zustand der Smart Home Geräte geben und die Konfiguration der Interaktion zwischen den Geräten ermöglichen.
 
-## Die Applikation starten
+## Starten der Applikation
 
 ```
 npm install -g http-server
@@ -29,4 +29,9 @@ npm install
 http-server app/
 ```
 
+## Ausführen der Tests
 
+1. Installation von `protractor` und `webdriver-manager`. Siehe hierzu https://www.protractortest.org/#/tutorial#setup.
+2. Start der Applikation.
+3. Neues Terminal: `webdriver-manager update && webdriver-manager start`
+4. Neues Terminal: `protractor protractor.conf.js`

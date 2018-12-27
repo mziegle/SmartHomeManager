@@ -5,10 +5,15 @@ describe('login', function() {
     });
 
     it('should login to the application', function() {
+
+        // Arrange
         element(by.id('user')).clear().sendKeys('test');
         element(by.id('password')).clear().sendKeys('test');
+
+        // Act
         element(by.id('login')).click();
 
+        // Assert
         browser.getCurrentUrl().then(function(currentUrl){
             expect(currentUrl.indexOf('overview')).toBeGreaterThan(-1);
         });

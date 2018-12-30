@@ -1,22 +1,24 @@
+var loginPage = require('./pages/LoginPage');
+
 describe('login', function() {
 
-    beforeAll(function() {
-        browser.get("http://localhost:8080");
+    beforeAll(async function() {
+        await loginPage.get();
     });
 
-    it('should login to the application', function() {
+    it('should login to the application', async function() {
 
         // Arrange
-        element(by.id('user')).clear().sendKeys('test');
-        element(by.id('password')).clear().sendKeys('test');
+        await loginPage.setUser('Bob');
+        await loginPage.setPassword('secret');
 
         // Act
-        element(by.id('login')).click();
+        await loginPage.login();
 
         // Assert
-        browser.getCurrentUrl().then(function(currentUrl){
-            expect(currentUrl.indexOf('overview')).toBeGreaterThan(-1);
-        });
+        var currentUrl = await browser.getCurrentUrl();
+
+        expect(currentUrl.indexOf('overview')).toBeGreaterThan(-1);
     });
 
 });

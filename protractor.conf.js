@@ -5,5 +5,7 @@ exports.config = {
 
     capabilities: {
         'browserName': 'chrome'
-    }
+    },
+
+    SELENIUM_PROMISE_MANAGER: false
 };

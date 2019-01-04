@@ -4,6 +4,10 @@ var LoginPage = function() {
         return browser.get("http://localhost:8080");
     }
 
+    this.loadingIcon = function() {
+        return element(by.id('loadingIcon'));
+    }
+
     this.setUser = function(user) {
         return element(by.id('user')).clear().sendKeys(user);
     }

@@ -1,11 +1,27 @@
 SmartHomeManger
 
-    .controller('signInController', function($location) {
-            
+    .controller('signInController', function($scope, $location, signInService) {
+
         var signInController = this;
 
+        signInController.loginInProgress = false;
+
         signInController.signIn = function() {
-            $location.path( "/overview" );
+
+            signInController.loginInProgress = true;
+
+            signInService.checkCredentials(
+                'Bob',
+                'secret',
+                (success) => {
+                    if (success) {
+                        signInController.loginInProgress = false;
+                        $location.path("/overview");
+                        $scope.$apply();
+                    } else {
+                        throw 'Login failed';
+                    }
+                });
         };
 
     })
